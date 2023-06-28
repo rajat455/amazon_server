@@ -21,8 +21,13 @@ app.get("/product/:id", productController.GetProductById)
 app.post("/cart", productController.Getcart)
 app.post("/user/register", userConroller.RegiseterUser)
 app.post("/user/login", userConroller.LoginUser)
-app.post("/order", Authentication.CreateOrderAuth , orderCotroller.CreateOrder)
+app.post("/order", Authentication.CreateOrderAuth, orderCotroller.CreateOrder)
 app.post("/payment/verify", Authentication.CreateOrderAuth, orderCotroller.paymentVerify)
+app.get("/order", Authentication.CreateOrderAuth, orderCotroller.getuserOrder)
+app.get("/order/:id", Authentication.CreateOrderAuth, orderCotroller.getOrderById)
+
+
+
 
 
 app.listen(process.env.PORT || 5000, () => {

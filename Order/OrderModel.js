@@ -11,6 +11,8 @@ class OrderModel{
             delivaryStatus:{type:String, require:true, default:"pending"},
             totalPrice:{type:Number, require:true},
             deliverdIn:{type:Date, require:true}
+        }, {
+            timestamps:true
         })
     }
 }
